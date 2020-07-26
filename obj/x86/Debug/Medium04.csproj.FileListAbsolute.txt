@@ -1,0 +1,5 @@
+C:\Users\romai\Source\Repos\RivInfo\Medium04\bin\Debug\ConsoleApplication.exe
+C:\Users\romai\Source\Repos\RivInfo\Medium04\bin\Debug\ConsoleApplication.pdb
+C:\Users\romai\Source\Repos\RivInfo\Medium04\obj\x86\Debug\Medium04.csprojAssemblyReference.cache
+C:\Users\romai\Source\Repos\RivInfo\Medium04\obj\x86\Debug\ConsoleApplication.exe
+C:\Users\romai\Source\Repos\RivInfo\Medium04\obj\x86\Debug\ConsoleApplication.pdb

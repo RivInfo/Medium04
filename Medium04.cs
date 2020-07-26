@@ -1,13 +1,12 @@
 ﻿using System;
 
-class Wombat
+abstract class LivingBeing
 {
     public int Health;
-    public int Armor;
+    public abstract void TakeDamage(int damage);
 
-    public void TakeDamage(int damage)
+    protected void HelthDetect()
     {
-        Health -= damage - armor;
         if (Health <= 0)
         {
             Console.WriteLine("Я умер");
@@ -15,17 +14,24 @@ class Wombat
     }
 }
 
-class Human
+class Wombat : LivingBeing
 {
-    public int Health;
+    public int Armor;
+
+    public override void TakeDamage(int damage)
+    {
+        Health -= damage - Armor;
+        HelthDetect();
+    }
+}
+
+class Human : LivingBeing
+{
     public int Agility;
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
         Health -= damage / Agility;
-        if (Health <= 0)
-        {
-            Console.WriteLine("Я умер");
-        }
+        HelthDetect();
     }
 }

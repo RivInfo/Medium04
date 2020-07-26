@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "задача-Medium04",
+      "appliesTo": "Medium04.cs",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "задача-Medium04",
+      "appliesTo": "Medium04.cs",
+      "type": "launch"
+    }
+  ]
+}
