@@ -2,10 +2,9 @@
 
 abstract class LivingBeing
 {
-    public int Health;
-    public abstract void TakeDamage(int damage);
+    protected int Health;
 
-    protected void HelthDetect()
+    public virtual void TakeDamage(int damage)
     {
         if (Health <= 0)
         {
@@ -21,7 +20,7 @@ class Wombat : LivingBeing
     public override void TakeDamage(int damage)
     {
         Health -= damage - Armor;
-        HelthDetect();
+        base.TakeDamage(damage);
     }
 }
 
@@ -32,6 +31,6 @@ class Human : LivingBeing
     public override void TakeDamage(int damage)
     {
         Health -= damage / Agility;
-        HelthDetect();
+        base.TakeDamage(damage);
     }
 }
