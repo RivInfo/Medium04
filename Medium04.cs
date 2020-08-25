@@ -2,10 +2,11 @@
 
 abstract class LivingBeing
 {
-    protected int Health;
+    private int Health;
 
     public virtual void TakeDamage(int damage)
     {
+        Health -= damage;
         if (Health <= 0)
         {
             Console.WriteLine("Я умер");
@@ -15,22 +16,22 @@ abstract class LivingBeing
 
 class Wombat : LivingBeing
 {
-    public int Armor;
+    public int Armor{ get; private set; }
 
     public override void TakeDamage(int damage)
     {
-        Health -= damage - Armor;
+        damage -= damage - Armor;
         base.TakeDamage(damage);
     }
 }
 
 class Human : LivingBeing
 {
-    public int Agility;
+    public int Agility{ get; private set; }
 
     public override void TakeDamage(int damage)
     {
-        Health -= damage / Agility;
+        damage -= damage / Agility;
         base.TakeDamage(damage);
     }
 }
