@@ -1,31 +1,41 @@
 ﻿using System;
 
-class Wombat
+abstract class LivingBeing
 {
-    public int Health;
-    public int Armor;
+    private int _health;
 
     public void TakeDamage(int damage)
     {
-        Health -= damage - armor;
-        if (Health <= 0)
+        _health -= CalculateDamage(damage);
+        Console.WriteLine(_health);
+        if (_health <= 0)
         {
             Console.WriteLine("Я умер");
         }
     }
+
+    protected virtual int CalculateDamage(int damage)
+    {
+        return damage;
+    }
 }
 
-class Human
+class Wombat : LivingBeing
 {
-    public int Health;
-    public int Agility;
+    public int Armor{ get; private set; }
 
-    public void TakeDamage(int damage)
+    protected override int CalculateDamage(int damage)
     {
-        Health -= damage / Agility;
-        if (Health <= 0)
-        {
-            Console.WriteLine("Я умер");
-        }
+        return damage - Armor;
+    }
+}
+
+class Human : LivingBeing
+{
+    public int Agility{ get; private set; }
+
+    protected override int CalculateDamage(int damage)
+    {
+        return damage/ Agility;
     }
 }
